@@ -698,18 +698,13 @@ def bot_sys_stats():
     mem = virtual_memory().percent
     disk = disk_usage("/").percent
     return f"""
-Modified by @ItsBitDefender
-
-Tasks Running: {tasks}
+UP🔺: {sent}
+DL🔻: {recv}
 
 CPU: {progress_bar(cpu)} {cpu}%
 RAM: {progress_bar(mem)} {mem}%
 DISK: {progress_bar(disk)} {disk}%
-
-SENT: {sent} | RECV: {recv}
-
-DLs: {num_active} | ULs: {num_upload} | SEEDING: {num_seeding}
-ZIP: {num_zip} | UNZIP: {num_unzip} | SPLIT: {num_split}
+Tasks Running: {tasks}
 """
 
 dispatcher.add_handler(CallbackQueryHandler(pop_up_stats, pattern="^" + str(THREE) + "$"))
