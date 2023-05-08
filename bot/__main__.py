@@ -399,7 +399,7 @@ if config_dict['SET_BOT_COMMANDS']:
 
 def main():
     try:
-        bot.sendMessage(chat_id=config_dict['OWNER_ID'], text="I am now online 🌐")
+        bot.sendMessage(chat_id=config_dict['OWNER_ID'], text="Bots Are Online !")
     except:
         pass
         
