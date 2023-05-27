@@ -408,7 +408,7 @@ class GoogleDriveHelper:
                     url_path = rquote(f'{f_name}', safe='')
                     url = f'{INDEX_URL}/{url_path}/'
                     url = short_url(url, self.user_id)
-                    buttons.buildbutton("⚡ Index Link", url)
+                    buttons.buildbutton("📥 Download Url", url)
             else:
                 file = self.__copyFile(meta.get('id'), GDRIVEID, meta.get('name'))
                 if config_dict['EMOJI_THEME']:
@@ -437,11 +437,11 @@ class GoogleDriveHelper:
                     url_path = rquote(f'{file.get("name")}', safe='')
                     url = f'{INDEX_URL}/{url_path}'
                     url = short_url(url, self.user_id)
-                    buttons.buildbutton("⚡ Index Link", url)
+                    buttons.buildbutton("📥 Download Url", url)
                     if config_dict['VIEW_LINK']:
                         urls = f'{INDEX_URL}/{url_path}?a=view'
                         urls = short_url(urls, self.user_id)
-                        buttons.buildbutton("🌐 View Link", urls)
+                        buttons.buildbutton("📍 View", urls)
             if config_dict['BUTTON_FOUR_NAME'] != '' and config_dict['BUTTON_FOUR_URL'] != '':
                 buttons.buildbutton(f"{config_dict['BUTTON_FOUR_NAME']}", f"{config_dict['BUTTON_FOUR_URL']}")
             if config_dict['BUTTON_FIVE_NAME'] != '' and config_dict['BUTTON_FIVE_URL'] != '':
