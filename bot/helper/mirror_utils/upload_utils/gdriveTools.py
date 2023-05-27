@@ -399,11 +399,11 @@ class GoogleDriveHelper:
                 durl = short_url(durl, self.user_id)
                 if config_dict['DISABLE_DRIVE_LINK']:
                     if self.user_id == OWNER_ID:
-                        buttons.buildbutton("☁️ Drive Link", durl)
+                        buttons.buildbutton("💾 Drive Download", durl)
                     else:
                         pass
                 else:
-                    buttons.buildbutton("☁️ Drive Link", durl)
+                    buttons.buildbutton("💾 Drive Download", durl)
                 if INDEX_URL := INDEXURL:
                     url_path = rquote(f'{f_name}', safe='')
                     url = f'{INDEX_URL}/{url_path}/'
@@ -420,11 +420,11 @@ class GoogleDriveHelper:
                 durl = short_url(durl, self.user_id)
                 if config_dict['DISABLE_DRIVE_LINK']:
                     if self.user_id == OWNER_ID:
-                        buttons.buildbutton("☁️ Drive Link", durl)
+                        buttons.buildbutton("💾 Drive Download", durl)
                     else:
                         pass
                 else:
-                    buttons.buildbutton("☁️ Drive Link", durl)
+                    buttons.buildbutton("💾 Drive Download", durl)
                 if mime_type is None:
                     mime_type = 'File'
                 if config_dict['EMOJI_THEME']:
@@ -639,7 +639,7 @@ class GoogleDriveHelper:
                             url_path = rquote(f'{file.get("name")}', safe='')
                         url = f'{index_url}/{url_path}/'
                         if tegr or tgdi:
-                            msg += f' <b>| <a href="{url}">Index Link</a></b>'
+                            msg += f' <b>| <a href="{url}">Download Url</a></b>'
                 elif mime_type == 'application/vnd.google-apps.shortcut':
                     furl = f"https://drive.google.com/drive/folders/{file.get('id')}"
                     msg += f"⁍<a href='https://drive.google.com/drive/folders/{file.get('id')}'>{file.get('name')}" \
@@ -662,17 +662,17 @@ class GoogleDriveHelper:
                             url_path = rquote(f'{file.get("name")}')
                         if config_dict['SHORTENER']:
                             url = short_url(f'{index_url}/{url_path}', self.user_id)
-                            msg += f' <b>| <a href="{url}">Index Link</a></b>'
+                            msg += f' <b>| <a href="{url}">Download Url</a></b>'
                         else:
                             url = f'{index_url}/{url_path}'
-                            msg += f' <b>| <a href="{url}">Index Link</a></b>'
+                            msg += f' <b>| <a href="{url}">Download Url</a></b>'
                         if config_dict['SHORTENER']:
                             urlv = short_url(f'{index_url}/{url_path}?a=view', self.user_id)
                         else:
                             urlv = f'{index_url}/{url_path}?a=view'
                         if config_dict['VIEW_LINK']:
                             urlv = urlv
-                            msg += f' <b>| <a href="{urlv}">View Link</a></b>'
+                            msg += f' <b>| <a href="{urlv}">View</a></b>'
                             
                 if tegr:
                     msg += '<br><br>'
