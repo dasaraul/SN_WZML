@@ -488,11 +488,11 @@ class MirrorLeechListener:
             link = short_url(link, user_id_)
             if config_dict['DISABLE_DRIVE_LINK']:
                 if self.user_id == OWNER_ID:
-                    buttons.buildbutton("☁️ Drive Link", link)
+                    buttons.buildbutton("💾 Drive Download", link)
                 else:
                     pass
             else:
-                buttons.buildbutton("☁️ Drive Link", link)
+                buttons.buildbutton("💾 Drive Download", link)
             LOGGER.info(f'Done Uploading {name}')
             _, INDEXURL = getGDriveUploadUtils(user_id_, self.u_index, self.c_index)
             if INDEX_URL:= INDEXURL:
@@ -501,14 +501,14 @@ class MirrorLeechListener:
                 if typ == "Folder":
                     share_url += '/'
                     share_url = short_url(share_url, user_id_)
-                    buttons.buildbutton("⚡ Index Link", share_url)
+                    buttons.buildbutton("📥 Download Url", share_url)
                 else:
                     share_url = short_url(share_url, user_id_)
-                    buttons.buildbutton("⚡ Index Link", share_url)
+                    buttons.buildbutton("📥 Download Url", share_url)
                     if config_dict['VIEW_LINK']:
                         share_urls = f'{INDEX_URL}/{url_path}?a=view'
                         share_urls = short_url(share_urls, user_id_)
-                        buttons.buildbutton("🌐 View Link", share_urls)
+                        buttons.buildbutton("📍 View", share_urls)
                     if config_dict['SOURCE_LINK']:
                         try:
                             mesg = message_args[1]
