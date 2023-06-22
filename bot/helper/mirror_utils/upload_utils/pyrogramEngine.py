@@ -122,7 +122,7 @@ class TgUploader:
             pass
 
         if config_dict['LEECH_CAPTION']:
-            cap_mono = f"<{config_dict['CAPTION_FONT']}>{config_dict['LEECH_CAPTION']}</b>\n\n<b>{file_}</{config_dict['CAPTION_FONT']}>"
+            cap_mono = f"{config_dict['LEECH_CAPTION']}</b>\n\n<b>{file_}"
             new_path = ospath.join(dirpath, file_)
             osrename(up_path, new_path)
             up_path = new_path
@@ -133,7 +133,7 @@ class TgUploader:
             osrename(up_path, new_path)
             up_path = new_path
         else:
-            cap_mono = f"<config_dict['CAPTION_FONT']>{file_}</config_dict['CAPTION_FONT']>"
+            cap_mono = f"{file_}"
         
         if config_dict['AS_DOCUMENT']:
             cap_mono = f""
